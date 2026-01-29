@@ -12,3 +12,5 @@ Il serait possible d'avoir cela:
 * Hub USB avec *Allimentation*
   - **Utilité:** Ce hub permet de brancher a la foit la Camera et d'allimenter la carte.
 * Allimentation (Besoin d'une solution)
+* LED
+  - **Utilité:** Pourquoi pas avoir une led qui eclaire l'utilisateur pour le scan du visage, pour éviter des problème d'eclairage etc?
