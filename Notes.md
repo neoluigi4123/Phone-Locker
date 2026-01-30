@@ -14,3 +14,7 @@ Il serait possible d'avoir cela:
 * Allimentation (Besoin d'une solution)
 * LED
   - **Utilité:** Pourquoi pas avoir une led qui eclaire l'utilisateur pour le scan du visage, pour éviter des problème d'eclairage etc?
+
+* Aimants
+  - **Utilité:** Pour le système de porte a l'arrière.
+  - **Detail:** Fournis par le professeur (2 Aimants).
