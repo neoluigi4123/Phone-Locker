@@ -72,7 +72,7 @@ CAHIER DES CHARGES PHONE LOCKER
  - LED
  - (Buzzer)
    
-### 7. Critères de performance
+### 6. Critères de performance
 | Critère |	Valeur attendue |
 |:---|:---|
 |Nombre de téléphones |	36 |
