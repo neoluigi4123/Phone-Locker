@@ -18,7 +18,7 @@ CAHIER DES CHARGES PHONE LOCKER
    
     Stocker jusqu’à 36 téléphones dans un système sécurisé et automatisé, en autorisant l’accès uniquement aux utilisateurs reconnus.
 
-### Table 1: Service Functions (Fonctions de service)
+### 3. Service Functions (Fonctions de service)
 
 | N° | Fonction de service | Description |
 |:--:|:---|:---|
@@ -29,7 +29,7 @@ CAHIER DES CHARGES PHONE LOCKER
 | **FS5** | Informer l’utilisateur | Affichage d’informations sur un écran LCD et/ou LED |
 | **FS6** | Permettre une commande manuelle en cas de problème | Trois boutons accessibles via une trappe arrière |
 
-### Table 2: Technical Functions (Fonctions techniques)
+### 4. Technical Functions (Fonctions techniques)
 
 | Fonction technique | Solution retenue |
 |:---|:---|
@@ -60,19 +60,23 @@ CAHIER DES CHARGES PHONE LOCKER
         - Specs : 420p, 30 fps
    
         - Utilité :
-   
-	Détection et analyse du visage
-	Faible résolution pour un traitement rapide et fluide
-5.3 Interface utilisateur
-•	Écran LCD : Affichage d’instructions, état du système
-•	Boutons (x3)
-•	LED
-•	(Buzzer)
-7. Critères de performance
-Critère	Valeur attendue
-Nombre de téléphones	36
-Temps de reconnaissance	?
-Précision reconnaissance	Suffisante pour distinguer les utilisateurs
-Temps d’ouverture	?
 
+            - Détection et analyse du visage
+   
+            - Faible résolution pour un traitement rapide et fluide
+   
+5.3 Interface utilisateur
+
+ - Écran LCD : Affichage d’instructions, état du système
+ - Boutons (x3)
+ - LED
+ - (Buzzer)
+   
+### 7. Critères de performance
+| Critère |	Valeur attendue |
+|:---|:---|
+|Nombre de téléphones |	36 |
+| Temps de reconnaissance | ? |
+| Précision reconnaissance | Suffisante pour distinguer les utilisateurs |
+| Temps d’ouverture | ? |
 
