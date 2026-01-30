@@ -22,19 +22,19 @@
 
 | N° | Fonction de service | Description |
 |:--:|:---|:---|
-| **FS1** | Identifier l’utilisateur | Le système doit reconnaître le visage de l’utilisateur via une caméra |
+| **FS1** | Identifier l’utilisateur | Le système doit reconnaître le visage de l’utilisateur via la caméra |
 | **FS2** | Autoriser ou refuser l’accès | En fonction de la reconnaissance faciale |
-| **FS3** | Ranger les téléphones | Chaque téléphone est placé dans un compartiment dédié |
-| **FS4** | Accéder aux téléphones | Une porte motorisée permet l’accès au compartiment |
+| **FS3** | Ranger les téléphones | Chaque téléphone est placé dans son compartiment dédié |
+| **FS4** | Accéder aux téléphones | Une porte motorisée permet l’accès au compartiment en descendant vers le dessous du chassis |
 | **FS5** | Informer l’utilisateur | Affichage d’informations sur un écran LCD et/ou LED |
-| **FS6** | Permettre une commande manuelle en cas de problème | Trois boutons accessibles via une trappe arrière |
+| **FS6** | Permettre une commande manuelle en cas de problème | Trois boutons accessibles via la trappe à arrière à aimant |
 
 ## 4. Technical Functions (Fonctions techniques)
 
 | Fonction technique | Solution retenue |
 |:---|:---|
 | Traitement des données | Carte Arduino UNO Q |
-| Reconnaissance faciale | Caméra USB |
+| Reconnaissance faciale | Caméra USB 420p et 30fps |
 | Rotation du plateau | Moteur électrique avec encodeur |
 | Ouverture de la porte | Moteur électrique |
 | Interface utilisateur | Écran LCD + boutons poussoirs |
