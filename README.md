@@ -10,3 +10,5 @@ Ce fichier sert de presentation mais également de *RoadMap* afin de voir l'evol
 <img width="1292" height="1248" alt="Phone-Locker" src="https://github.com/user-attachments/assets/01981956-e4e5-4699-8db6-677a7b74969c" />
 
 <img width="1163" height="994" alt="Phone-Locker-image" src="https://github.com/user-attachments/assets/9473dcab-8695-4d56-b365-757e4fa0feea" />
+
+A peu pres 75-80% des cotation/mesures sont faites, elle vons etre uploadé plus tard.
