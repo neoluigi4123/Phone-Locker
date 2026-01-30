@@ -1,24 +1,24 @@
-CAHIER DES CHARGES PHONE LOCKER
+# CAHIER DES CHARGES PHONE LOCKER
 
-1. Présentation générale du projet
+## 1. Présentation générale du projet
    
-    1.1 Contexte
+   ### 1.1 Contexte
    
-     Dans le cadre du projet de Terminale STI2D spécialité SIN, nous devons concevoir un système électronique automatisé répondant à un besoin réel.
+   Dans le cadre du projet de Terminale STI2D spécialité SIN, nous devons concevoir un système électronique automatisé répondant à un besoin réel.
    
-    1.2 Besoin à satisfaire
+   ### 1.2 Besoin à satisfaire
    
-     Limiter l’usage du téléphone portable dans un lieu donné (salle de classe, réunion, etc.) en proposant une boîte sécurisée, intelligente et automatisée permettant :
+   Limiter l’usage du téléphone portable dans un lieu donné (salle de classe, réunion, etc.) en proposant une boîte sécurisée, intelligente et automatisée permettant :
 
-    - Déposer les téléphones
+   - Déposer les téléphones
    
-    - Les récupérer avec le visage
+   - Les récupérer avec le visage
       
-3. Fonction globale du système
+## 2. Fonction globale du système
    
-    Stocker jusqu’à 36 téléphones dans un système sécurisé et automatisé, en autorisant l’accès uniquement aux utilisateurs reconnus.
+   Stocker jusqu’à 36 téléphones dans un système sécurisé et automatisé, en autorisant l’accès uniquement aux utilisateurs reconnus.
 
-### 3. Service Functions (Fonctions de service)
+## 3. Service Functions (Fonctions de service)
 
 | N° | Fonction de service | Description |
 |:--:|:---|:---|
@@ -29,7 +29,7 @@ CAHIER DES CHARGES PHONE LOCKER
 | **FS5** | Informer l’utilisateur | Affichage d’informations sur un écran LCD et/ou LED |
 | **FS6** | Permettre une commande manuelle en cas de problème | Trois boutons accessibles via une trappe arrière |
 
-### 4. Technical Functions (Fonctions techniques)
+## 4. Technical Functions (Fonctions techniques)
 
 | Fonction technique | Solution retenue |
 |:---|:---|
@@ -41,38 +41,38 @@ CAHIER DES CHARGES PHONE LOCKER
 | Signalisation | LED (et buzzer) |
 | Alimentation | Piles |
 
-5. Description des composants
+## 5. Description des composants
    
-    5.1 Carte Arduino
+   ### 5.1 Carte Arduino
    
-        * Carte : Arduino UNO Q
+   - Carte : Arduino UNO Q
    
-        * Utilité :
+   - Utilité :
    
-            Gestion des moteurs
+        Gestion des moteurs
    
-            Communication avec la caméra
+        Communication avec la caméra
    
-            Traitement de la reconnaissance faciale (Python)
+        Traitement de la reconnaissance faciale (Python)
    
-    5.2 Caméra USB
+   ### 5.2 Caméra USB
    
-        - Specs : 420p, 30 fps
+   - Specs : 420p, 30 fps
    
-        - Utilité :
+   - Utilité :
 
-            - Détection et analyse du visage
+        Détection et analyse du visage
    
-            - Faible résolution pour un traitement rapide et fluide
+        Faible résolution pour un traitement rapide et fluide
    
-5.3 Interface utilisateur
+### 5.3 Interface utilisateur
 
  - Écran LCD : Affichage d’instructions, état du système
  - Boutons (x3)
  - LED
  - (Buzzer)
    
-### 6. Critères de performance
+## 6. Critères de performance
 | Critère |	Valeur attendue |
 |:---|:---|
 |Nombre de téléphones |	36 |
