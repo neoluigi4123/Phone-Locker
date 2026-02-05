@@ -19,3 +19,7 @@ Il serait possible d'avoir cela:
 * Aimants
   - **Utilité:** Pour le système de porte a l'arrière.
   - **Detail:** Fournis par le professeur (2 Aimants de 0.5 cm de diamètre et 0,2 cm d'épaisseur).
+
+*Roue MultiDirectionnel
+-**Utilité:** Pour aider la partie haute du caroussel à tourner beaucoup plus simplement
+
