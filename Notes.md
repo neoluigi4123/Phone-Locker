@@ -18,4 +18,4 @@ Il serait possible d'avoir cela:
 
 * Aimants
   - **Utilité:** Pour le système de porte a l'arrière.
-  - **Detail:** Fournis par le professeur (2 Aimants).
+  - **Detail:** Fournis par le professeur (2 Aimants de 0.5 cm de diamètre et 0,2 cm d'épaisseur).
