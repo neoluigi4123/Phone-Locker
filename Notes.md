@@ -23,3 +23,7 @@ Il serait possible d'avoir cela:
 * Roue MultiDirectionnelle
   - **Utilité:** Pour aider la partie haute du caroussel à tourner beaucoup plus simplement
 
+
+
+
+# U   =  R   *   I
