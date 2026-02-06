@@ -38,14 +38,15 @@
 | Rotation du plateau | Moteur électrique avec encodeur |
 | Ouverture de la porte | Moteur électrique |
 | Interface utilisateur | Écran LCD + boutons poussoirs |
-| Signalisation | LED (et buzzer) |
+| Signalisation | buzzer |
 | Alimentation | Piles |
+| ( Eclairer l'utilisateur ) | ( LED ) |
 
 ## 5. Description des composants
    
    ### 5.1 Carte Arduino
    
-   - Carte : Arduino UNO Q
+   - Carte :  Arduino UNO Q
    
    - Utilité :
    
@@ -67,10 +68,10 @@
    
 ### 5.3 Interface utilisateur
 
- - Écran LCD : Affichage d’instructions, état du système
- - Boutons (x3)
- - LED
- - (Buzzer)
+ - Écran LCD : Affichage d’instructions, état du système ?
+ - Boutons (x3) 
+ - LED ?
+ - Buzzer ?
    
 ## 6. Critères de performance
 | Critère |	Valeur attendue |
