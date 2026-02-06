@@ -11,4 +11,8 @@ Ce fichier sert de presentation mais également de *RoadMap* afin de voir l'evol
 
 <img width="1163" height="994" alt="Phone-Locker-image" src="https://github.com/user-attachments/assets/9473dcab-8695-4d56-b365-757e4fa0feea" />
 
-A peut près 75-80% des cotations/mesures sont faites, elles vont être uploadés plus tard.
+---
+
+Ajout de la pièce 3d pour la base. Le plan et d'utiliser la decoupeuse laser plutot que l'impression 3d pour gain de temps.
+
+Les modèles 3d sont dans le dossier **SolidWorks**.
