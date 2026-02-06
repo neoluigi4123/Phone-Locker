@@ -16,3 +16,5 @@ Ce fichier sert de presentation mais également de *RoadMap* afin de voir l'evol
 Ajout de la pièce 3d pour la base. Le plan et d'utiliser la decoupeuse laser plutot que l'impression 3d pour gain de temps.
 
 Les modèles 3d sont dans le dossier **SolidWorks**.
+
+![IMG_20260205_175102](https://github.com/user-attachments/assets/e7dcbc7e-5382-4559-8607-d936a90b7b68)
