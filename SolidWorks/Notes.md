@@ -4,3 +4,6 @@ Ce fichier doit contenir les fichier **SolidWorks** et **assemblage**, mais en a
 
 
 GOOD FIGHT BOY !
+
+
+NEGRO NEGRO NEGRO
