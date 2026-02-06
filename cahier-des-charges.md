@@ -12,7 +12,7 @@
 
    - Déposer les téléphones
    
-   - Les récupérer avec le visage
+   - Les récupérer avec une reconnaissance faciale
       
 ## 2. Fonction globale du système
    
@@ -23,11 +23,11 @@
 | N° | Fonction de service | Description |
 |:--:|:---|:---|
 | **FS1** | Identifier l’utilisateur | Le système doit reconnaître le visage de l’utilisateur via la caméra |
-| **FS2** | Autoriser ou refuser l’accès | En fonction de la reconnaissance faciale |
+| **FS2** | Autoriser ou refuser l’accès | En fonction du résultat de la reconnaissance faciale |
 | **FS3** | Ranger les téléphones | Chaque téléphone est placé dans son compartiment dédié |
 | **FS4** | Accéder aux téléphones | Une porte motorisée permet l’accès au compartiment en descendant vers le dessous du chassis |
 | **FS5** | Informer l’utilisateur | Affichage d’informations sur un écran LCD et/ou LED |
-| **FS6** | Permettre une commande manuelle en cas de problème | Trois boutons accessibles via la trappe à arrière à aimant |
+| **FS6** | Permettre une commande manuelle en cas de problème | Trois boutons accessibles via la trappe à aimant à l'arrière |
 
 ## 4. Technical Functions (Fonctions techniques)
 
