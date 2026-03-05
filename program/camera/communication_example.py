@@ -1,62 +1,36 @@
-"""
-Script python
-"""
-
 import time
-import serial # permet la communication entre appareil usb
+import sys
+from arduino import app_utils
 
-class arduino:
-    def __init__(self, device: str = '/dev/ttyUSB0', baudrate: int = 9600, timeout: float = 1.0) -> None:
-        """
-        Initialiser la communication entre le programme python et le cœur arduino.
-        """
+print("[INFO] Client Bridge initialisé.")
 
-	try:
-            self.serial = serial.Serial(device, baudrate, timeout)
-	    time.sleep(timeout + 1)
-	    self.serial.reset_input_buffer()
+input_text = "yo"
 
-	except Exception as e:
-	    return(f"[ERREUR] > __init__: {e}")
-
-
-    def get(self) -> str | None:
-	"""
-	Lire les messages envoyé par la carte Arduino.
-	"""
-
-	try:
-	    if self.serial.in_waiting > 0:
-
-		line = self.serial.readline().decode('utf-8')
-		return(line)
-
-	except Exception as e:
-	    return(f"[ERREUR] > get(): {e}")
-
-
-    def post(self, message: str, return: bool, delay: retry = 10) -> str:
-        """
-        Envoyer un message et recevoir la reponse de l'Arduino
-
-        Args:
-            - return (bool): Si l'Arduino doit retourner un message ou non.
-        """
-
+while True:
+    if input_text == "ping":
+        input_text = "yo"
+    else:
+        input_text = "ping"
+        
+    time.sleep(2)
+    
+    try:
+        query = input_text
+        if query.lower() in ["exit", "quit"]:
+            break
+        
         try:
-            self.serial.write(message.encode('utf-8'))
-
-            if return:
-		for i in range(retry):
-                    result = self.get()
-		    if result = None:
-			time.sleep(0.5)
-	            else:
-                        return(result)
-                return(f"[ERREUR] > post(): {e}")
-
+            response = app_utils.Bridge.call("traiter_commande", query)
+            if response is not None:
+                print(f"[ARDUINO] {response}")
             else:
-                return(f"[ENVOYER] : {message.encode('utf-8')}
-
+                print("[INFO] Aucune valeur retournée.")
+                
         except Exception as e:
-            return(f"[ERREUR] > post(): {e}")
+            print(f"[ERREUR Bridge] {e}")
+
+    except EOFError:
+        break
+    except KeyboardInterrupt:
+        print("\nArrêt.")
+        break
