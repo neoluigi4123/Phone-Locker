@@ -25,5 +25,6 @@ Il serait possible d'avoir cela:
 
 
 
-# PA TOUCHEUX !!!!!!!! :( :( :( :)
+
 # U   =  R   *   I
+## à garder important (svp)(de préférence)
