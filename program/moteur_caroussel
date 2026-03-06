@@ -44,7 +44,6 @@ void Move(int degrees, int percent)
 void id(int telephone)
 {
   int pos = map(telephone, 1, 36, 10, 360);
-  
   Move(pos, 10);
   delay(telephone*50);
 }
