@@ -25,5 +25,5 @@ Il serait possible d'avoir cela:
 
 
 
-# PAS TOUCHE !!!!!!!!
+# PA TOUCHEUX !!!!!!!! :( :( :(
 # U   =  R   *   I
