@@ -4,24 +4,30 @@ LSS myLSS = LSS(0); // ID: 0-5 -> 1-6
 
 void setup()
 {
-	LSS::initBus(Serial, LSS_DefaultBaud);
-	myLSS.move(0);
-	delay(2000);
+  LSS::initBus(Serial, LSS_DefaultBaud);
+
+  // Lower output servo stiffness & accelerations
+  myLSS.setAngularStiffness(10);
+  myLSS.setAngularHoldingStiffness(40);
+  myLSS.setAngularDeceleration(60);
+  
+  myLSS.move(0);
+  delay(2000);
 }
 
 void loop()
 {
-	Move(36, 30);
-	delay(2000);
+  Move(180, 10);
+  delay(4000);
 
-	Move(-90, 100);
-	delay(2000);
+  Move(0, 10);
+  delay(4000);
 }
 
 void Move(int degrees, int percent)
 {
-	int pos = degrees * 10;
-	int speed = percent * 36;
+  int pos = degrees * 10;
+  myLSS.setAngularAcceleration(percent);
 
-	myLSS.moveSpeed(pos, speed);
+  myLSS.move(pos);
 }
