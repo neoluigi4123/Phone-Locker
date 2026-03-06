@@ -1,11 +1,3 @@
-</*
- *  Author:     Brahim Daouas (support@robotshop.com)
- *  Version:    1.1.0
- *  Licence:    LGPL-3.0 (GNU Lesser General Public License version 3)
- *  
- *  Description:  Basic example of the LSS rotating continuously.
- */
-
 #include <LSS.h>
 
 // ID set to default LSS ID = 0
@@ -30,7 +22,6 @@ void setup()
   // Move the LSS continuously in one direction
   myLSS.wheelRPM(10);
 }
-
 void loop()
 {
   // Nothing to do in loop
