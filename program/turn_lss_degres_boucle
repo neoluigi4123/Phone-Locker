@@ -1,0 +1,35 @@
+  #include <LSS.h>
+
+LSS myLSS = LSS(0); // ID: 0-5 -> 1-6
+
+void setup()
+{
+  LSS::initBus(Serial, LSS_DefaultBaud);
+
+  // Lower output servo stiffness & accelerations
+  myLSS.setAngularStiffness(10);
+  myLSS.setAngularHoldingStiffness(40);
+  myLSS.setAngularDeceleration(60);
+  
+  myLSS.move(0);
+  delay(2000);
+}
+
+void loop()
+{
+  for (int i=0; i <= 360; i += 10)
+   {
+     Move(i,100);
+     if(i == 0){delay(2500);}
+     else{delay(500);}
+   }
+  
+}
+
+void Move(int degrees, int percent)
+{
+  int pos = degrees * 10;
+  myLSS.setAngularAcceleration(percent);
+
+  myLSS.move(pos);
+}
