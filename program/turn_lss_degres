@@ -1,3 +1,5 @@
+//fonctionne parfaitement il faut laisser le void setup tel qu'elle aussi non il serre
+
 #include <LSS.h>
 
 LSS myLSS = LSS(0); // ID: 0-5 -> 1-6
