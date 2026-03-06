@@ -25,5 +25,5 @@ Il serait possible d'avoir cela:
 
 
 
-# P   =  u   *   I
+# P   =  U   *   I
 # U   =  R   *   I
