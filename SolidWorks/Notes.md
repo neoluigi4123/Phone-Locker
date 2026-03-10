@@ -10,3 +10,4 @@ Ce fichier doit contenir les fichier **SolidWorks** et **assemblage**, mais en a
 - fini avec toute les pieces, socle pour camera a finir pour l'adapte a notre camera
 - porte avec separateur bon angle pour chaque telephone
 - Pièce en plexiglass faite
+- super assemblage vu avec le mec du fablab
