@@ -1,0 +1,24 @@
+#include "Grove_I2C_Motor_Driver.h"
+
+void setup() {
+  Motor.begin(0x0F);
+  Motor.stop(MOTOR1);
+}
+
+void loop() {
+  ouvrir();
+  delay (500);
+  fermer();
+  delay (500);
+  }
+void ouvrir(){
+  Motor.speed(MOTOR1, 50 );
+  delay(1000);
+  Motor.speed(MOTOR1, 0 );
+}
+
+void fermer () {
+ Motor.speed(MOTOR1, -50 );
+ delay(1000);
+ Motor.speed(MOTOR1, 0 );
+}
