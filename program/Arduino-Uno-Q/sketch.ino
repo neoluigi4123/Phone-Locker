@@ -23,7 +23,7 @@ String traiter_commande(String message) {
       int speed = speedStr.toInt();
       
       Move(angle, speed);
-      delay(3000)
+      delay(3000);
       
       return "Motor moved to " + String(angle) + " with speed " + String(speed);
     } else {
@@ -35,7 +35,7 @@ String traiter_commande(String message) {
 }
 
 void setup() {
-  LSS::initBus(Serial1, LSS_DefaultBaud);
+  LSS::initBus(Serial, LSS_DefaultBaud);
 
   myLSS.setAngularStiffness(10);
   myLSS.setAngularHoldingStiffness(40);
@@ -44,7 +44,7 @@ void setup() {
   myLSS.move(0);
   delay(2000);
   
-  Serial.begin(9600); 
+  Serial.begin(115200); 
   Bridge.begin();
   Bridge.provide("traiter_commande", traiter_commande);
 }
@@ -56,5 +56,5 @@ void loop() {
 void Move(int degrees, int percent) {
   myLSS.setAngularAcceleration(percent);
   
-  myLSS.move(degrees);
+  myLSS.move(degrees*10);
 }
