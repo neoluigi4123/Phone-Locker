@@ -12,7 +12,7 @@ while True:
     else:
         input_text = "move:0,20"
         
-    time.sleep(2)
+    time.sleep(4)
     
     try:
         query = input_text
