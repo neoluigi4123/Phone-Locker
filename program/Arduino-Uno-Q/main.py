@@ -4,15 +4,18 @@ from arduino import app_utils
 
 print("[INFO] Client Bridge initialisé.")
 
-input_text = "move:100,20"
+input_text = "Id:2" # 'move:100,20'
+
+i = 1
 
 while True:
-    if input_text == "move:0,20":
-        input_text = "move:100,10"
-    else:
-        input_text = "move:0,20"
+    i += 1;
+    if i > 36:
+        i = 1
         
-    time.sleep(4)
+    input_text = f"Id:{i}"
+    
+    time.sleep(5)
     
     try:
         query = input_text
