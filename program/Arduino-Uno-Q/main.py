@@ -12,9 +12,12 @@ while True:
     i += 1;
     if i > 36:
         i = 1
+
+    if "Id" in input_text:
+        input_text = f""
+    else:
+        input_text = f"Id:{i}"
         
-    input_text = f"Id:{i}"
-    
     time.sleep(5)
     
     try:
