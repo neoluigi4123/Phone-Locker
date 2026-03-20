@@ -3,6 +3,7 @@
 
 LSS myLSS = LSS(0); // ID: 0
 void Move(int degrees, int percent);
+void Id(int id);
 
 String traiter_commande(String message) {
   if (message == "ping") {
@@ -23,12 +24,21 @@ String traiter_commande(String message) {
       int speed = speedStr.toInt();
       
       Move(angle, speed);
-      delay(3000);
       
       return "Motor moved to " + String(angle) + " with speed " + String(speed);
     } else {
       return "Error: format must be move:angle,speed";
     }
+  }
+
+  if (message.startsWith("Id:")) {
+    
+    String parameters = message.substring(3);
+    int id = parameters.toInt();
+      
+    Id(id);
+      
+    return "Open on id " + String(id);
   }
   
   return "Reçu : " + message;
@@ -40,9 +50,12 @@ void setup() {
   myLSS.setAngularStiffness(10);
   myLSS.setAngularHoldingStiffness(40);
   myLSS.setAngularDeceleration(60);
-  
+
   myLSS.move(0);
   delay(2000);
+
+  Motor.begin(0x0F);
+  Motor.stop(MOTOR1);
   
   Serial.begin(115200); 
   Bridge.begin();
@@ -57,4 +70,22 @@ void Move(int degrees, int percent) {
   myLSS.setAngularAcceleration(percent);
   
   myLSS.move(degrees*10);
+}
+
+void Id(int id) {
+  int pos = map(id, 1, 36, 0, 350);
+  Move(pos, 60);
+  ouvrir();
+}
+
+void ouvrir(){
+  Motor.speed(MOTOR1, 50 );
+  delay(1000);
+  Motor.speed(MOTOR1, 0 );
+}
+
+void fermer () {
+ Motor.speed(MOTOR1, -50 );
+ delay(1000);
+ Motor.speed(MOTOR1, 0 );
 }
