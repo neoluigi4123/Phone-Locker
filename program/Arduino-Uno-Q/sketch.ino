@@ -1,5 +1,6 @@
 #include <LSS.h>
 #include <Arduino_RouterBridge.h>
+#include <Grove_I2C_Motor_Driver.h>
 
 LSS myLSS = LSS(0); // ID: 0
 void Move(int degrees, int percent);
@@ -8,6 +9,11 @@ void Id(int id);
 String traiter_commande(String message) {
   if (message == "ping") {
     return "pong";
+  }
+
+  if (message == "Fermer") {
+    // fermer();
+    return "Door Closed";
   }
 
   if (message.startsWith("move:")) {
@@ -55,7 +61,7 @@ void setup() {
   delay(2000);
 
   Motor.begin(0x0F);
-  Motor.stop(MOTOR1);
+  Motor.speed(MOTOR1, 0);
   
   Serial.begin(115200); 
   Bridge.begin();
@@ -75,6 +81,7 @@ void Move(int degrees, int percent) {
 void Id(int id) {
   int pos = map(id, 1, 36, 0, 350);
   Move(pos, 60);
+  delay(1000);
   ouvrir();
 }
 
