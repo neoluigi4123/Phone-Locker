@@ -14,11 +14,16 @@ while True:
         i = 1
 
     if "Id" in input_text:
-        input_text = f""
+        input_text = f"Id:{i}"
     else:
         input_text = f"Id:{i}"
-        
-    time.sleep(5)
+
+    #if input_text == "Ouvrir":
+    #    input_text = "Fermer"
+    #else:
+    #    input_text = "Ouvrir"
+    
+    time.sleep(1)
     
     try:
         query = input_text
