@@ -2,7 +2,7 @@
 
 bold minimalist/simple
 
-plan dessin coupure rapide (ressemble à une esquisse) (
+plan dessin coupure rapide (ressemble à une esquisse) 
 
 texte derrière acteur (https://youtu.be/iE8eO7PAonU?si=_ZkM9hKC3JU_DSEg)
 
