@@ -27,4 +27,9 @@ La vidéo est split en 4 partie:
 
 4. Finalisation avec compillation de b-roll (pplans de coupe de nous en train de souder, coder, rigoler, debattre, dessinner au tableau, etc etc) (30 sec) -> on les fake, c'est pas grave, on refait quand on redessiner au tableau au debut, pas grave. Ça peut etre filmer au format vertical aussi, c'est chill...
 
+# Story Board 
+
+<img width="4000" height="6000" alt="storyboard" src="https://github.com/user-attachments/assets/e3d86e62-d88c-4787-8896-d42e0c9f9840" />
+
+
 
