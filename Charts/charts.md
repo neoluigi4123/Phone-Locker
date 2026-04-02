@@ -15,7 +15,7 @@ Ce dossier permet de stoquer les diagrammes, chartes, et autres representation v
 
 ## Blocs de diagramme de blocs
 
-a faire
+à faire
 
 - - -
 
