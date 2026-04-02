@@ -96,16 +96,16 @@ void setup() {
   delay(500);
 
   // check connection
-  Wire.beginTransmission(MOTOR_ADDR);
-  if (Wire.endTransmission() != 0) {
-      while (1) {
-          digitalWrite(LED, HIGH); delay(80);
-          digitalWrite(LED, LOW);  delay(80);
-      }
-  }
+ // Wire.beginTransmission(MOTOR_ADDR);
+ // if (Wire.endTransmission() != 0) {
+ //     while (1) {
+ //         digitalWrite(LED, HIGH); delay(80);
+  //        digitalWrite(LED, LOW);  delay(80);
+  //    }
+  //}
 
-    stop();
-    delay(500);
+    // stop();
+    // delay(500);
 
   pinMode(lineFinderPin, INPUT);
 
