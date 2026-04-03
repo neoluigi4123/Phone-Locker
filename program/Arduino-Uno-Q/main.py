@@ -38,7 +38,7 @@ class VideoCaptureLatest:
         self.cap.release()
 
 # Replace cv2.VideoCapture with our new threading class
-video_capture = VideoCaptureLatest('http://192.168.43.1:4747/video')
+video_capture = VideoCaptureLatest('/dev/video2') #http://192.168.43.1:4747
 
 def encode_faces(image_path):
     """
@@ -69,6 +69,20 @@ def find_smallest_available():
         if face_bank[i] is None:
             return i
     return -1
+
+def send_command(query):
+    """
+    Cette fonction envoie une commande a la carte arduino
+    """
+    try:
+        response = app_utils.Bridge.call("traiter_commande", query)
+        if response is not None:
+            print(f"[ARDUINO] {response}")
+        else:
+            print("[INFO] Aucune valeur retournée.")
+                
+    except Exception as e:
+        print(f"[ERREUR Bridge] {e}")
 
 while True:
     input_text = ""
@@ -132,25 +146,44 @@ while True:
                     print(f"[+]  new face detected (ID {slot+1})")
                     input_text = f"Id:{slot+1}"
     
-    except KeyboardInterrupt:
-        print("\nArrêt.")
-        break
+    except Exception as e:
+        print(f"[ERREUR] {e}")
+        continue
 
-    # Send command to board
     try:
-        query = input_text
-        try:
-            response = app_utils.Bridge.call("traiter_commande", query)
-            if response is not None:
-                print(f"[ARDUINO] {response}")
-            else:
-                print("[INFO] Aucune valeur retournée.")
-                
-        except Exception as e:
-            print(f"[ERREUR Bridge] {e}")
+        if input_text:
+            send_command(input_text)
+    except Exception as e:
+        print(f"[ERREUR] {e}")
+    
+    # Check if face was detected and sent to Arduino, wait unill the face goes away to send the `fermer` command
+    if "Id" in input_text:
+        while True:
+            ret, frame = video_capture.read()
+            if not ret or frame is None:
+                print("[x]  error: impossible de lire la caméra")
+                break
 
-    except EOFError:
-        break
-    except KeyboardInterrupt:
-        print("\nArrêt.")
-        break
+            small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
+            small_frame = np.ascontiguousarray(small_frame[:, :, ::-1])
+
+            face_locations, encoded_faces = encode_faces(small_frame)
+
+            # No face at all
+            if len(encoded_faces) == 0:  # Aucun visage détecté
+                print("[ ]  no face detected, sending 'fermer' command")
+                send_command("Fermer")
+                break
+
+            # Face small enough
+            biggest_area = 0
+            for (top, right, bottom, left) in face_locations:
+                area = (bottom - top) * (right - left)
+                if area > biggest_area:
+                    biggest_area = area
+            if biggest_area < 1500:  # Seuil de surface pour considerer que le visage est "loin"
+                print("[ ]  face too small, sending 'fermer' command")
+                send_command("Fermer")
+                break
+
+            time.sleep(1)
