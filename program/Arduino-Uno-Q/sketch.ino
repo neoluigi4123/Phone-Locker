@@ -6,7 +6,11 @@ int current_pos = 1; // From 1 to 36
 #define MOTOR_ADDR 0x0F
 #define LED 13
 
-int lineFinderPin = 3;
+int lineFinderPin = 8;
+int bouton1 = 4;
+int bouton2 = 3;
+
+bool etat_porte = false;
 
 // motor commands
 #define SpeedSet     0x82
@@ -81,11 +85,10 @@ String traiter_commande(String message) {
     int id = parameters.toInt();
       
     Id(id);
-      
     return "Open on id " + String(id);
   }
   
-  return "Reçu : " + message;
+  return "Recu: " + message;
 }
 
 void setup() {
@@ -94,18 +97,6 @@ void setup() {
   Wire.begin();
   Wire.setClock(50000);
   delay(500);
-
-  // check connection
- // Wire.beginTransmission(MOTOR_ADDR);
- // if (Wire.endTransmission() != 0) {
- //     while (1) {
- //         digitalWrite(LED, HIGH); delay(80);
-  //        digitalWrite(LED, LOW);  delay(80);
-  //    }
-  //}
-
-    // stop();
-    // delay(500);
 
   pinMode(lineFinderPin, INPUT);
 
@@ -116,35 +107,84 @@ void setup() {
 
 void loop() {
   Bridge.update();
+  if (digitalRead(bouton1) == 1){
+    if (etat_porte == 0){
+      ouvrir();
+    } else {
+      fermer();
+    }
+  }
+  while (digitalRead(bouton1) == 1){
+    delay(50);
+  }
+
+  if (digitalRead(bouton2) == 1){
+    if (current_pos == 36){
+      current_pos = 1;
+    } else {
+      current_pos =+ 1;
+    }
+    Id(current_pos);
+    delay(1000);
+  }
 }
 
 void Move(int degrees, int percent) {
-  setDirection(M2_CW);
-  setSpeed(0, 255);
-  
-  bool prev_lineFinder = digitalRead(lineFinderPin);
+  if (current_pos == degrees) {
+    stop();
+    return;
+  }
 
-  while(digitalRead(lineFinderPin) == prev_lineFinder){
-    delay(50);
+  // Calculate distance if we were to move clockwise
+  // Adding 36 before modulo ensures we don't get negative numbers
+  int dist_cw = (degrees - current_pos + 36) % 36;
+  
+  // If distance is 18 or less, Clockwise is optimal. Otherwise, Counter-Clockwise.
+  bool move_cw = (dist_cw <= 18);
+
+  if (move_cw) {
+    setDirection(M2_CW);
+  } else {
+    setDirection(M2_CCW);
   }
-  // Check when the lineFinderPin switches to black
-  while(digitalRead(lineFinderPin) == 0){
-    delay(50);
+  
+  setSpeed(0, percent);
+  
+  while (current_pos != degrees) {
+    // Wait until it detects the line
+    while(digitalRead(lineFinderPin) != 0) {
+      delay(2);
+    }
+    
+    // Wait until it leaves the line completely
+    while(digitalRead(lineFinderPin) == 0) {
+      delay(2);
+    }
+        
+    // Update position depending on which way we are turning
+    if (move_cw) {
+      current_pos += 1;
+      if (current_pos > 36) {
+        current_pos = 1;
+      }
+    } else {
+      current_pos -= 1;
+      if (current_pos < 1) {
+        current_pos = 36;
+      }
+    }
   }
-      
-  current_pos += 1;
-  // stop
+  
+  // Target reached: Stop the motor completely
   stop();
-  delay(300);
+  delay(500); 
 }
 
 void Id(int id) {
-  int pos = map(id, 1, 36, 0, 350);
-  Move(pos, 60);
+  Move(id, 100);
   delay(1000);
   ouvrir();
   delay(1000);
-  fermer();
 }
 
 void ouvrir(){
