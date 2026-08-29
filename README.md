@@ -1,3 +1,22 @@
+> [!NOTE]
+> **Statut : Projet archivé**  
+> Ce projet n'est plus maintenu activement par l'équipe d'origine. Ce dépôt est conservé comme historique et ressource de base.  
+> 💡 **Conseil aux futurs élèves :** Si vous reprenez ou poursuivez ce projet, il est préférable de créer un tout nouveau dépôt propre et de venir y piocher uniquement les ressources dont vous avez besoin, plutôt que de dupliquer/forker l'ensemble.
+
+> [!WARNING]
+> **Propriété intellectuelle, Droits & Conservation**
+> - **Brevet & Reproduction tierce :** Le système faisant l'objet d'un brevet/d'une protection, sa reproduction ou son exploitation par des personnes extérieures au projet sans accord préalable est interdite.
+> - **Droits de M. Pirrera :** M. Pirrera dispose d'une autorisation totale pour utiliser, exploiter, adapter et présenter ce projet avec ses élèves (cours, concours, olympiades, démonstrations ou autres événements).
+> - **Conservation des données (Clause 2031) :** Afin de préserver l'historique et le travail d'équipe réalisé, la suppression ou la destruction de ce dépôt et des fichiers du projet est formellement proscrite pour une durée minimale de 5 ans (jusqu'en **2031** inclus).
+
+## 📌 Notes rapides pour la reprise
+
+- **Dossiers :**
+  - `/Charts` : Contient tous les diagrammes SysML et l'algorigramme complet (Python / Arduino).
+  - `/SolidWorks` : Fichiers pour la découpe laser et les pièces 3D.
+- **Caméra :** Si la caméra ne se lance pas sous Python, pensez à vérifier l'index du périphérique dans le script (`/dev/video0`, `/dev/video2` ou IP).
+- **Mémoire :** Les visages enregistrés sont stockés temporairement en RAM par le script. Redémarrer le programme réinitialise la banque des 36 casiers.
+
 # Phone-Locker
 Répertoire afin de structurer la recherche et l'évolution du projet
 
